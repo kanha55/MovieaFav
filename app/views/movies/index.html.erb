@@ -1,13 +1,15 @@
 <%= link_to "Movies", movies_path %>
 <%= link_to "Users", admin_path, class: "decoration_none"%>
+
 <br><br>
 <%= link_to "Add Movie", new_movie_path %>
+<br><br><br>
 <table>
   <% @movies.each do |movie| %>
     <tr>
     <td><%= link_to movie.name, edit_movie_path(movie) %></td>
     <td><%= movie.year %></td>
-    <td>4</td>
+    <td><%= movie.users.count %></td>
     <td><%= link_to "Delete", movie_path(movie.id), method: :delete %></td>
     </tr>  
   <% end %>

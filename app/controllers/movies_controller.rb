@@ -30,6 +30,11 @@ class MoviesController < ApplicationController
   end
 
   def destroy
+    if @movie.destroy
+      redirect_to movies_path
+    else
+      render :edit 
+    end
   end
 
   private

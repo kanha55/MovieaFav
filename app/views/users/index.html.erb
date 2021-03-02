@@ -1,11 +1,11 @@
 <%= link_to "Movies", movies_path, class: "decoration_none" %>
 <%= link_to "Users", admin_path %>
-<br>
+<br><br><br>
 <table>
   <% @users.each do |user| %>
     <tr>
     <td><%= link_to user.username, user_path(user.id) %></td>
-    <td>4</td>
+    <td><%= user.movies.count %></td>
     <td><%= link_to "Delete", user_path(user.id), method: :delete %></td>
     </tr>  
   <% end %>
