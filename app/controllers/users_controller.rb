@@ -11,6 +11,8 @@ class UsersController < ApplicationController
     redirect_to admin_path
   end
 
+  def logout; end
+
   private
   def find_user
     @user = User.find_by(id: params[:id])

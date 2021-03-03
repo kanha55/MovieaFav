@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'admin' => 'users#index'
+  get 'logout' => 'users#logout'
 
   resources :users, only: [:show, :destroy]
   resources :movies
